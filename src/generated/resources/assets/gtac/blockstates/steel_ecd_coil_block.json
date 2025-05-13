@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "active=false": {
+      "model": "gtac:block/steel_ecd_coil_block"
+    },
+    "active=true": {
+      "model": "gtac:block/steel_ecd_coil_block_active"
+    }
+  }
+}

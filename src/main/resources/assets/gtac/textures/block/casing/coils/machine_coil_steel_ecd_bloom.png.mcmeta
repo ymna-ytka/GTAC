@@ -1,0 +1,9 @@
+{
+    "ldlib": {
+        "connection": "gtac:block/coils/machine_coil_steel_ecd_bloom_ctm",
+        "emissive": true
+    },
+    "shimmer": {
+        "bloom": true
+    }
+}
