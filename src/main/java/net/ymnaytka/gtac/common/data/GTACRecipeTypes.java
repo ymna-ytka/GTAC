@@ -134,14 +134,6 @@ public class GTACRecipeTypes {
             .setSound(GTSoundEntries.WIRECUTTER_TOOL)
             .setEUIO(IO.IN);
 
-    public static final GTRecipeType SPIRAL_SEPARATOR = register("spiral_separator", ELECTRIC)
-            .setMaxIOSize(3, 3, 3, 3)
-            .setSlotOverlay(false, false, GuiTextures.DUST_OVERLAY)
-            .setSlotOverlay(true, false, GuiTextures.DUST_OVERLAY)
-            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, LEFT_TO_RIGHT)
-            .setSound(GTSoundEntries.CENTRIFUGE)
-            .setEUIO(IO.IN);
-
     public static final GTRecipeType TWILIGHT_FARMER = register("twilight_farmer", ELECTRIC)
             .setMaxIOSize(1, 2, 1, 1)
             .setSlotOverlay(false, false, GuiTextures.INT_CIRCUIT_OVERLAY)

@@ -45,6 +45,12 @@ public class GTACBlocks {
     public static final BlockEntry<Block> INDUCTION_CASING = createCasingBlock("induction_casing",
             GTAC.id("block/casing/induction_casing"));
 
+    public static final BlockEntry<Block> FILTERING_CAMERA = createCasingBlock("filtering_camera",
+            GTAC.id("block/casing/filtering_camera"));
+
+    public static final BlockEntry<Block> REACTIVE_CLEANER = createCasingBlock("reactive_cleaner",
+            GTAC.id("block/casing/reactive_cleaner"));
+
     public static BlockEntry<Block> createGlassCasingBlock(String name, ResourceLocation texture) {
         return createCasingBlock(name, GlassBlock::new, texture, () -> Blocks.GLASS,
                 () -> RenderType::translucent);

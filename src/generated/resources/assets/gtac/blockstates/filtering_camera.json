@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "gtac:block/filtering_camera"
+    }
+  }
+}
