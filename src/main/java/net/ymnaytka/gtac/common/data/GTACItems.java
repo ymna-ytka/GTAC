@@ -102,11 +102,6 @@ public class GTACItems {
             .properties(p -> p.stacksTo(1))
             .register();
 
-    public static ItemEntry<Item> Blacksmith_Code = REGISTRATE
-            .item("blacksmith_code", Item::new)
-            .properties(p -> p.stacksTo(1))
-            .register();
-
     public static ItemEntry<Item> Solar_Element = REGISTRATE
             .item("solar_element", Item::new)
             .properties(p -> p.stacksTo(16))
@@ -122,48 +117,43 @@ public class GTACItems {
             .properties(p -> p.stacksTo(32))
             .register();
 
-    public static ItemEntry<Item> Blank_Lv_Electric_Motor = REGISTRATE
+    public static ItemEntry<Item> Blank_LV_Electric_Motor = REGISTRATE
             .item("blank_lv_electric_motor", Item::new)
             .properties(p -> p.stacksTo(32))
             .register();
 
-    public static ItemEntry<Item> Blank_Lv_Conveyor = REGISTRATE
+    public static ItemEntry<Item> Blank_LV_Conveyor = REGISTRATE
             .item("blank_lv_conveyor", Item::new)
             .properties(p -> p.stacksTo(32))
             .register();
 
-    public static ItemEntry<Item> Blank_Lv_Electric_Piston = REGISTRATE
+    public static ItemEntry<Item> Blank_LV_Electric_Piston = REGISTRATE
             .item("blank_lv_electric_piston", Item::new)
             .properties(p -> p.stacksTo(32))
             .register();
 
-    public static ItemEntry<Item> Masonry_Instructions = REGISTRATE
-            .item("masonry_instructions", Item::new)
-            .properties(p -> p.stacksTo(1))
-            .register();
-
-    public static ItemEntry<Item> Blank_Lv_Electric_Pump = REGISTRATE
+    public static ItemEntry<Item> Blank_LV_Electric_Pump = REGISTRATE
             .item("blank_lv_electric_pump", Item::new)
             .properties(p -> p.stacksTo(32))
             .register();
 
-    public static ItemEntry<Item> Blank_Lv_Robot_Arm = REGISTRATE
+    public static ItemEntry<Item> Blank_LV_Robot_Arm = REGISTRATE
             .item("blank_lv_robot_arm", Item::new)
             .properties(p -> p.stacksTo(32))
             .register();
 
-    public static ItemEntry<Item> Blank_Lv_Sensor = REGISTRATE
+    public static ItemEntry<Item> Blank_LV_Sensor = REGISTRATE
             .item("blank_lv_sensor", Item::new)
             .properties(p -> p.stacksTo(32))
             .register();
 
-    public static ItemEntry<Item> Blank_Lv_Emitter = REGISTRATE
-            .item("blank_lv_electric_emitter", Item::new)
+    public static ItemEntry<Item> Blank_LV_Emitter = REGISTRATE
+            .item("blank_lv_emitter", Item::new)
             .properties(p -> p.stacksTo(32))
             .register();
 
-    public static ItemEntry<Item> Blank_Lv_Field_Generator = REGISTRATE
-            .item("blank_lv_electric_field_generator", Item::new)
+    public static ItemEntry<Item> Blank_LV_Field_Generator = REGISTRATE
+            .item("blank_lv_field_generator", Item::new)
             .properties(p -> p.stacksTo(32))
             .register();
 
@@ -215,6 +205,71 @@ public class GTACItems {
     public static ItemEntry<Item> Blank_Steam_Pump = REGISTRATE
             .item("blank_steam_pump", Item::new)
             .properties(p -> p.stacksTo(32))
+            .register();
+
+    public static ItemEntry<Item> Wrough_Iron_Bender_Path = REGISTRATE
+            .item("wrough_iron_bender_path", Item::new)
+            .properties(p -> p.stacksTo(32))
+            .register();
+
+    public static ItemEntry<Item> Carbide_Silicon_Orb = REGISTRATE
+            .item("carbide_silicon_orb", Item::new)
+            .properties(p -> p.stacksTo(64))
+            .register();
+
+    public static ItemEntry<Item> Fill_Carbide_Silicone_Orb = REGISTRATE
+            .item("fill_carbide_silicon_orb", Item::new)
+            .properties(p -> p.stacksTo(4))
+            .register();
+
+    public static ItemEntry<Item> Plant_Fibers = REGISTRATE
+            .item("plant_fibers", Item::new)
+            .properties(p -> p.stacksTo(64))
+            .register();
+
+    public static ItemEntry<Item> Plant_Fiber_Mesh = REGISTRATE
+            .item("plant_fiber_mesh", Item::new)
+            .properties(p -> p.stacksTo(64))
+            .register();
+
+    public static ItemEntry<Item> Empty_Flask = REGISTRATE
+            .item("empty_flask", Item::new)
+            .properties(p -> p.stacksTo(4))
+            .register();
+
+    public static ItemEntry<Item> Glass_Balloon = REGISTRATE
+            .item("glass_balloon", Item::new)
+            .properties(p -> p.stacksTo(1))
+            .register();
+
+    public static ItemEntry<Item> Ballon_Mold = REGISTRATE
+            .item("ballon_mold", Item::new)
+            .properties(p -> p.stacksTo(1))
+            .register();
+
+    public static ItemEntry<Item> Raw_Aluminium_Ingot = REGISTRATE
+            .item("raw_aluminium_ingot", Item::new)
+            .properties(p -> p.stacksTo(64))
+            .register();
+
+    public static ItemEntry<Item> Clean_Aluminium_Ingot = REGISTRATE
+            .item("clean_aluminium_ingot", Item::new)
+            .properties(p -> p.stacksTo(64))
+            .register();
+
+    public static ItemEntry<Item> High_Quality_Aluminium_Ingot = REGISTRATE
+            .item("high_quality_aluminium_ingot", Item::new)
+            .properties(p -> p.stacksTo(64))
+            .register();
+
+    public static ItemEntry<Item> Flint_Dye = REGISTRATE
+            .item("flint_dye", Item::new)
+            .properties(p -> p.stacksTo(64))
+            .register();
+
+    public static ItemEntry<Item> Cleansed_Leather = REGISTRATE
+            .item("cleansed_leather", Item::new)
+            .properties(p -> p.stacksTo(64))
             .register();
 
     public static <T extends ComponentItem> NonNullConsumer<T> attach(IItemComponent... components) {

@@ -481,7 +481,7 @@ public class GTACMachines {
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType(GTACRecipeTypes.INDUCTION_FURNACE)
             .recipeModifiers(GTRecipeModifiers.PARALLEL_HATCH,
-                             GTRecipeModifiers.ELECTRIC_OVERCLOCK.apply(OverclockingLogic.NON_PERFECT_OVERCLOCK_SUBTICK))
+                    GTRecipeModifiers.ELECTRIC_OVERCLOCK.apply(OverclockingLogic.NON_PERFECT_OVERCLOCK_SUBTICK))
             .appearanceBlock(GTACBlocks.INDUCTION_CASING)
             .pattern(definition -> FactoryBlockPattern.start()
                     .aisle("CCCC", "CGGC", "CGGC", "CCCC")

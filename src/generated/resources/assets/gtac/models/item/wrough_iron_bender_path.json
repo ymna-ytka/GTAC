@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "gtac:item/wrough_iron_bender_path"
+  }
+}

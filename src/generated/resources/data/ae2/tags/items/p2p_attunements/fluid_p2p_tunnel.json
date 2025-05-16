@@ -1,6 +1,18 @@
 {
   "values": [
+    "gtac:salter_water_bucket",
+    "gtac:impregnating_oil_bucket",
     "gtac:black_essence_bucket",
-    "gtac:light_essence_bucket"
+    "gtac:light_essence_bucket",
+    "gtac:twilight_gas_bucket",
+    "gtac:liquid_twilight_gas_bucket",
+    "gtac:cold_water_bucket",
+    "gtac:sodium_carbonate_bucket",
+    "gtac:magical_essence_bucket",
+    "gtac:fiery_magic_water_bucket",
+    "gtac:overworld_aura_bucket",
+    "gtac:nether_aura_bucket",
+    "gtac:polluted_water_bucket",
+    "gtac:basic_liquid_fertilizer_bucket"
   ]
 }

@@ -10,6 +10,7 @@ public class GTACMaterials {
         GTACStoneAge.init();
         GTACSteamAge.init();
         GTACLVAge.init();
+        GTACMVAge.init();
     }
 
     public static Material SpongeCopper;
@@ -37,4 +38,17 @@ public class GTACMaterials {
     public static Material BlackEssence;
     public static Material LightEssence;
     public static Material NIALSteel;
+    public static Material TwilightGas;
+    public static Material SalterWater;
+    public static Material ImpregnatingOil;
+    public static Material LiquidTwilightGas;
+    public static Material ColdWater;
+    public static Material SodiumCarbonate;
+    public static Material MagicalEssence;
+    public static Material FieryMagicWater;
+    public static Material OverworldAura;
+    public static Material NetherAura;
+    public static Material PollutedWater;
+
+    public static Material BasicLiquidFertilizer;
 }

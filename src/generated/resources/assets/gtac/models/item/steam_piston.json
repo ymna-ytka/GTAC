@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "gtac:item/masonry_instructions"
+    "layer0": "gtac:item/steam_piston"
   }
 }

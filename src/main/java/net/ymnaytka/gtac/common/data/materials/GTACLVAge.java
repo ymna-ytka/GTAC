@@ -193,5 +193,59 @@ public class GTACLVAge {
                 .color(0x3F3F3F)
                 .iconSet(METALLIC)
                 .buildAndRegister();
+
+        GTACMaterials.TwilightGas = new Material.Builder(GTAC.id("twilight_gas"))
+                .gas()
+                .color(0xb69e74)
+                .iconSet(DULL)
+                .buildAndRegister();
+
+        GTACMaterials.LiquidTwilightGas = new Material.Builder(GTAC.id("liquid_twilight_gas"))
+                .liquid()
+                .color(0xb69e74)
+                .iconSet(DULL)
+                .buildAndRegister();
+
+        GTACMaterials.ColdWater = new Material.Builder(GTAC.id("cold_water"))
+                .liquid()
+                .color(0x52CEFB)
+                .iconSet(DULL)
+                .buildAndRegister().setFormula("H₂O", true);
+
+        GTACMaterials.SodiumCarbonate = new Material.Builder(GTAC.id("sodium_carbonate"))
+                .liquid()
+                .color(0xcabafb2)
+                .iconSet(DULL)
+                .buildAndRegister().setFormula("Na₂CO₃", true);
+
+        GTACMaterials.MagicalEssence = new Material.Builder(GTAC.id("magical_essence"))
+                .liquid()
+                .color(0x6f7f0d)
+                .iconSet(DULL)
+                .buildAndRegister().setFormula("?", true);
+
+        GTACMaterials.FieryMagicWater = new Material.Builder(GTAC.id("fiery_magic_water"))
+                .liquid()
+                .color(0x6c1414)
+                .iconSet(DULL)
+                .buildAndRegister().setFormula("?", true);
+
+        GTACMaterials.OverworldAura = new Material.Builder(GTAC.id("overworld_aura"))
+                .liquid()
+                .color(0xB6F746)
+                .iconSet(DULL)
+                .buildAndRegister().setFormula("Nr₂", true);
+
+        GTACMaterials.NetherAura = new Material.Builder(GTAC.id("nether_aura"))
+                .liquid()
+                .color(0x7e1a0b)
+                .iconSet(DULL)
+                .buildAndRegister().setFormula("Nr3", true);
+
+        GTACMaterials.PollutedWater = new Material.Builder(GTAC.id("polluted_water"))
+                .liquid()
+                .color(0x4d4f4a)
+                .iconSet(DULL)
+                .buildAndRegister();
     }
 }

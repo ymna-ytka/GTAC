@@ -8,14 +8,16 @@ import com.gregtechceu.gtceu.common.data.GTModels;
 
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.GlassBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraftforge.common.data.ForgeBlockTagsProvider;
 import net.ymnaytka.gtac.GTAC;
 import net.ymnaytka.gtac.common.registry.GTACRegistration;
-import net.ymnaytka.gtac.common.util.CustomTags;
 
 import com.tterrag.registrate.util.entry.BlockEntry;
 import com.tterrag.registrate.util.nullness.NonNullFunction;
@@ -72,7 +74,7 @@ public class GTACBlocks {
                 .properties(p -> p.isValidSpawn((state, level, pos, ent) -> false))
                 .addLayer(type)
                 .blockstate(GTModels.cubeAllModel(name, texture))
-                .tag(CustomTags.MINEABLE_WITH_WRENCH)
+                .tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .item(BlockItem::new)
                 .build()
                 .register();
@@ -98,7 +100,7 @@ public class GTACBlocks {
                 .addLayer(type)
                 .blockstate((ctx, prov) -> prov.simpleBlock(ctx.get(), prov.models()
                         .cubeBottomTop(name, sideTexture, topTexture, topTexture)))
-                .tag(CustomTags.MINEABLE_WITH_WRENCH)
+                .tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .item(BlockItem::new)
                 .build()
                 .register();
@@ -110,7 +112,7 @@ public class GTACBlocks {
                 .initialProperties(() -> Blocks.IRON_BLOCK)
                 .addLayer(() -> RenderType::cutoutMipped)
                 .blockstate(GTModels.createActiveModel(GTAC.id(baseModelPath)))
-                .tag(CustomTags.MINEABLE_WITH_WRENCH)
+                .tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .item(BlockItem::new)
                 .model((ctx, prov) -> prov.withExistingParent(prov.name(ctx), GTAC.id(baseModelPath)))
                 .build()
@@ -125,7 +127,7 @@ public class GTACBlocks {
                 .properties(p -> p.isValidSpawn((state, level, pos, ent) -> false))
                 .addLayer(() -> RenderType::cutoutMipped)
                 .blockstate(GTModels.createCoilModel("%s_coil_block".formatted(coilType.getName()), coilType))
-                .tag(CustomTags.MINEABLE_WITH_WRENCH)
+                .tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .item(BlockItem::new)
                 .build()
                 .register();
