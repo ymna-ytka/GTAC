@@ -9,13 +9,11 @@ import com.gregtechceu.gtceu.common.data.GTModels;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.GlassBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraftforge.common.data.ForgeBlockTagsProvider;
 import net.ymnaytka.gtac.GTAC;
 import net.ymnaytka.gtac.common.registry.GTACRegistration;
 
