@@ -99,6 +99,8 @@ public class GTACMachines {
         return definitions;
     }
 
+
+
     public static final Pair<MachineDefinition, MachineDefinition> STEAM_MIXER = registerSteamMachines(
             "steam_mixer", SimpleSteamMachine::new, (pressure, builder) -> builder
                     .rotationState(RotationState.NON_Y_AXIS)
@@ -116,146 +118,6 @@ public class GTACMachines {
                     .renderer(() -> new WorkableSteamMachineRenderer(pressure, GTCEu.id("block/machines/autoclave")))
                     .register());
 
-    public static final MultiblockMachineDefinition FIRE_BATH = REGISTRATE
-            .multiblock("fire_bath", WorkableElectricMultiblockMachine::new)
-            .langValue("Fire Bath")
-            .rotationState(RotationState.NON_Y_AXIS)
-            .recipeType(GTACRecipeTypes.FIRE_BATH)
-            .appearanceBlock(GTACBlocks.FIRE_CASING)
-            .pattern(definition -> FactoryBlockPattern.start()
-                    .aisle("CCC", "CCC", "CCC")
-                    .aisle("CCC", "CAC", "CCC")
-                    .aisle("CCC", "CCC", "CCC")
-                    .aisle("###", "#C#", "###")
-                    .aisle("###", "#C#", "###")
-                    .aisle("###", "#C#", "###")
-                    .aisle("#C#", "CCC", "#C#")
-                    .aisle("#C#", "CKC", "#C#")
-                    .where('C', blocks(GTACBlocks.FIRE_CASING.get()).setMinGlobalLimited(8)
-                            .or(autoAbilities(definition.getRecipeTypes()))
-                            .or(autoAbilities(false, false, false)))
-                    .where('K', controller(blocks(definition.getBlock())))
-                    .where('#', any())
-                    .where('A', air())
-                    .build())
-            .shapeInfos(definition -> {
-                List<MultiblockShapeInfo> shapeInfo = new ArrayList<>();
-                var builder = MultiblockShapeInfo.builder()
-                        .aisle("FYC", "SLC", "CCC")
-                        .aisle("CCC", "CAC", "CCC")
-                        .aisle("CCC", "CCC", "CCC")
-                        .aisle("###", "#C#", "###")
-                        .aisle("###", "#C#", "###")
-                        .aisle("###", "#C#", "###")
-                        .aisle("#C#", "CCC", "#C#")
-                        .aisle("#C#", "CKC", "#C#")
-                        .where('C', GTACBlocks.FIRE_CASING.getDefaultState())
-                        .where('F', ITEM_IMPORT_BUS[GTValues.ULV], Direction.SOUTH)
-                        .where('K', definition, Direction.SOUTH)
-                        .where('Y', GTMachines.FLUID_IMPORT_HATCH[GTValues.ULV], Direction.SOUTH)
-                        .where('S', GTMachines.ITEM_EXPORT_BUS[GTValues.ULV], Direction.SOUTH)
-                        .where('L', ENERGY_INPUT_HATCH[GTValues.ULV], Direction.SOUTH);
-
-                return shapeInfo;
-            })
-            .tooltips(
-                    Component.translatable("gtceu.machine.available_recipe_map_1.tooltip", "Fire Bath"))
-            .workableCasingRenderer(
-                    GTAC.id("block/casing/fire_casing"),
-                    GTAC.id("block/multiblock/steam-pss_template"),
-                    true)
-            // .compassSections(GTCompassSections.TIER[MV])
-            // .compassNodeSelf()
-            .register();
-
-    public static final MultiblockMachineDefinition FIRE_SAW = REGISTRATE
-            .multiblock("fire_saw", SteamParallelMultiblockMachine::new)
-            .langValue("Fire Saw")
-            .rotationState(RotationState.NON_Y_AXIS)
-            .recipeType(GTACRecipeTypes.FIRE_SAW)
-            .recipeModifier(SteamParallelMultiblockMachine::recipeModifier, true)
-            .appearanceBlock(GTACBlocks.FIRE_CASING)
-            .pattern(definition -> FactoryBlockPattern.start()
-                    .aisle("CCC", "CBC", "CBC", "TBT")
-                    .aisle("CCC", "BLB", "BLB", "TBT")
-                    .aisle("CCC", "BLB", "BLB", "TBT")
-                    .aisle("CKC", "CBC", "CBC", "TBT")
-                    .where('C', blocks(GTACBlocks.FIRE_CASING.get()).setMinGlobalLimited(16)
-                            .or(abilities(PartAbility.STEAM_EXPORT_ITEMS))
-                            .or(abilities(PartAbility.STEAM_IMPORT_ITEMS))
-                            .or(abilities(PartAbility.STEAM)))
-                    .where('K', controller(blocks(definition.getBlock())))
-                    .where('B', blocks(Blocks.GLASS))
-                    .where('L', blocks(ChemicalHelper.getBlock(TagPrefix.block, SpongeMetal)))
-                    .where('T', blocks(ChemicalHelper.getBlock(TagPrefix.frameGt, TreatedWood)))
-                    .build())
-            .shapeInfos(definition -> {
-                List<MultiblockShapeInfo> shapeInfo = new ArrayList<>();
-                var builder = MultiblockShapeInfo.builder()
-                        .aisle("CCC", "CBC", "CBC", "TBT")
-                        .aisle("CCC", "BLB", "BLB", "TBT")
-                        .aisle("SCY", "BLB", "BLB", "TBT")
-                        .aisle("SKF", "CBC", "CBC", "TBT")
-                        .where('C', GTACBlocks.FIRE_CASING.getDefaultState())
-                        .where('F', STEAM_IMPORT_BUS, Direction.SOUTH)
-                        .where('K', definition, Direction.SOUTH)
-                        .where('Y', STEAM_HATCH, Direction.SOUTH)
-                        .where('B', Blocks.GLASS.defaultBlockState())
-                        .where('L', ChemicalHelper.getBlock(TagPrefix.block, SpongeMetal))
-                        .where('T', ChemicalHelper.getBlock(TagPrefix.frameGt, TreatedWood))
-                        .where('S', STEAM_EXPORT_BUS, Direction.SOUTH);
-
-                return shapeInfo;
-            })
-            .tooltips(
-                    Component.translatable("gtceu.machine.available_recipe_map_1.tooltip", "Fire Saw"))
-            .workableCasingRenderer(
-                    GTAC.id("block/casing/fire_casing"),
-                    GTAC.id("block/multiblock/fire_saw"),
-                    true)
-            // .compassSections(GTCompassSections.TIER[MV])
-            // .compassNodeSelf()
-            .register();
-
-    public static final MultiblockMachineDefinition FIRE_SMELTER = REGISTRATE
-            .multiblock("fire_smelter", WorkableElectricMultiblockMachine::new)
-            .langValue("Fire Smelter")
-            .rotationState(RotationState.NON_Y_AXIS)
-            .recipeType(GTACRecipeTypes.FIRE_SMELTER)
-            .appearanceBlock(GTACBlocks.FIRE_CASING)
-            .pattern(definition -> FactoryBlockPattern.start()
-                    .aisle("CC", "BB", "CC")
-                    .aisle("KC", "BB", "CC")
-                    .where('C', blocks(GTACBlocks.FIRE_CASING.get()).setMinGlobalLimited(3)
-                            .or(autoAbilities(definition.getRecipeTypes()))
-                            .or(autoAbilities(false, false, false)))
-                    .where('K', controller(blocks(definition.getBlock())))
-                    .where('B', blocks(CASING_COKE_BRICKS.get()))
-
-                    .build())
-            .shapeInfos(definition -> {
-                List<MultiblockShapeInfo> shapeInfo = new ArrayList<>();
-                var builder = MultiblockShapeInfo.builder()
-                        .aisle("FL", "BB", "CC")
-                        .aisle("KS", "BB", "CC")
-                        .where('C', GTACBlocks.FIRE_CASING.getDefaultState())
-                        .where('B', CASING_COKE_BRICKS)
-                        .where('F', ITEM_IMPORT_BUS[GTValues.ULV], Direction.SOUTH)
-                        .where('K', definition, Direction.SOUTH)
-                        .where('S', GTMachines.ITEM_EXPORT_BUS[GTValues.ULV], Direction.SOUTH)
-                        .where('L', ENERGY_INPUT_HATCH[GTValues.ULV], Direction.SOUTH);
-
-                return shapeInfo;
-            })
-            .tooltips(
-                    Component.translatable("gtceu.machine.available_recipe_map_1.tooltip", "Fire Smelter"))
-            .workableCasingRenderer(
-                    GTAC.id("block/casing/fire_casing"),
-                    GTAC.id("block/multiblock/steam-pss_template"),
-                    true)
-            // .compassSections(GTCompassSections.TIER[MV])
-            // .compassNodeSelf()
-            .register();
 
     public static final MultiblockMachineDefinition STEAM_ALLOY_SMELTER = REGISTRATE
             .multiblock("steam_alloy_smelter", SteamParallelMultiblockMachine::new)
