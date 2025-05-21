@@ -25,28 +25,6 @@ public class GTACRecipeTypes {
 
     public static void init() {}
 
-    public static final GTRecipeType FIRE_SMELTER = register("fire_smelter", MULTIBLOCK)
-            .setMaxIOSize(3, 1, 1, 0)
-            .setSlotOverlay(false, false, GuiTextures.FURNACE_OVERLAY_1)
-            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT)
-            .setSound(GTSoundEntries.FURNACE)
-            .setEUIO(IO.IN);
-
-    public static final GTRecipeType FIRE_SAW = register("fire_saw", MULTIBLOCK)
-            .setMaxIOSize(1, 1, 0, 0)
-            .setSlotOverlay(false, false, GuiTextures.SAWBLADE_OVERLAY)
-            .setSlotOverlay(true, false, false, GuiTextures.CUTTER_OVERLAY)
-            .setProgressBar(GuiTextures.PROGRESS_BAR_SLICE, LEFT_TO_RIGHT)
-            .setSound(GTSoundEntries.CUT)
-            .setEUIO(IO.IN);
-
-    public static final GTRecipeType FIRE_BATH = register("fire_bath", MULTIBLOCK)
-            .setMaxIOSize(3, 3, 3, 3)
-            .setSlotOverlay(false, false, GuiTextures.FURNACE_OVERLAY_1)
-            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT)
-            .setSound(GTSoundEntries.FURNACE)
-            .setEUIO(IO.IN);
-
     public static final GTRecipeType BRONZE_MIXER = register("bronze_mixer", MULTIBLOCK)
             .setMaxIOSize(6, 2, 3, 3)
             .setSlotOverlay(false, false, GuiTextures.DUST_OVERLAY)
