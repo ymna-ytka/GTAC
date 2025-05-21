@@ -17,6 +17,8 @@ public class GTACMaterials {
     public static Material Ferabrass;
     public static Material Constantan;
     public static Material CastIron;
+    public static Material Tannin;
+    public static Material LimestoneWater;
 
     public static Material CarbideSilicon;
     public static Material ColdQuartz;

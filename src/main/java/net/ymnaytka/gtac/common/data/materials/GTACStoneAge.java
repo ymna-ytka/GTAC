@@ -20,5 +20,15 @@ public class GTACStoneAge {
                 .liquid()
                 .color(0x23120D)
                 .buildAndRegister();
+
+        GTACMaterials.Tannin = new Material.Builder(GTAC.id("tannin"))
+                .liquid()
+                .color(0xa68a6d)
+                .buildAndRegister();
+
+        GTACMaterials.LimestoneWater = new Material.Builder(GTAC.id("limestone_water"))
+                .liquid()
+                .color(0xdcd8c7)
+                .buildAndRegister();
     }
 }
