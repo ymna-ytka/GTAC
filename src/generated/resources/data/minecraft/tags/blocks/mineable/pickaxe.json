@@ -1,11 +1,7 @@
 {
   "values": [
     "gtac:steel_ecd_coil_block",
-    "gtac:fire_casing",
     "gtac:ferabrass_casing",
-    "gtac:ecoferum_casing",
-    "gtac:induction_casing",
-    "gtac:filtering_camera",
-    "gtac:reactive_cleaner"
+    "gtac:induction_casing"
   ]
 }
