@@ -10,7 +10,6 @@ import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 import com.gregtechceu.gtceu.api.machine.*;
 import com.gregtechceu.gtceu.api.machine.multiblock.CoilWorkableElectricMultiblockMachine;
 import com.gregtechceu.gtceu.api.machine.multiblock.PartAbility;
-import com.gregtechceu.gtceu.api.machine.multiblock.WorkableElectricMultiblockMachine;
 import com.gregtechceu.gtceu.api.machine.steam.SimpleSteamMachine;
 import com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern;
 import com.gregtechceu.gtceu.api.pattern.MultiblockShapeInfo;
@@ -230,7 +229,7 @@ public class GTACMachines {
                             .or(abilities(PartAbility.STEAM_EXPORT_ITEMS))
                             .or(abilities(PartAbility.STEAM_IMPORT_ITEMS))
                             .or(abilities(PartAbility.STEAM))
-                            .or(abilities(PartAbility.EXPORT_FLUIDS)))
+                            .or(Predicates.abilities(PartAbility.EXPORT_FLUIDS).setMinGlobalLimited(1)))
                     .where('K', controller(blocks(definition.getBlock())))
                     .where('B', blocks(FIREBOX_BRONZE.get()))
                     .where('P', blocks(CASING_BRONZE_PIPE.get()))
@@ -323,7 +322,8 @@ public class GTACMachines {
                     .where('C', blocks(GTACBlocks.FERABRASS_CASING.get()).setMinGlobalLimited(44)
                             .or(abilities(PartAbility.STEAM_EXPORT_ITEMS))
                             .or(abilities(PartAbility.STEAM_IMPORT_ITEMS))
-                            .or(abilities(PartAbility.STEAM)))
+                            .or(abilities(PartAbility.STEAM))
+                            .or(Predicates.abilities(PartAbility.EXPORT_FLUIDS).setMinGlobalLimited(1)))
                     .where('K', controller(blocks(definition.getBlock())))
                     .where('B', blocks(ChemicalHelper.getBlock(TagPrefix.block, Ferabrass)))
                     .where('F', blocks(FIREBOX_STEEL.get()))
@@ -406,54 +406,6 @@ public class GTACMachines {
             .workableCasingRenderer(
                     GTAC.id("block/casing/induction_casing"),
                     GTAC.id("block/multiblock/induction_furnace"),
-                    true)
-            // .compassSections(GTCompassSections.TIER[MV])
-            // .compassNodeSelf()
-            .register();
-
-    public static final MultiblockMachineDefinition NATURAL_CLEANER = REGISTRATE
-            .multiblock("natural_cleaner", SteamParallelMultiblockMachine::new)
-            .langValue("Natural Cleaner")
-            .rotationState(RotationState.NON_Y_AXIS)
-            .recipeType(GTACRecipeTypes.NATURAL_CLEANER)
-            .appearanceBlock(GTACBlocks.ECOFERUM_CASING)
-            .pattern(definition -> FactoryBlockPattern.start()
-                    .aisle("CCC", "OFO", "CCC")
-                    .aisle("CCC", "FRF", "CCC")
-                    .aisle("CKC", "OFO", "CCC")
-                    .where('C', blocks(GTACBlocks.ECOFERUM_CASING.get()).setMinGlobalLimited(11)
-                            .or(Predicates.abilities(PartAbility.EXPORT_ITEMS).setMaxGlobalLimited(1))
-                            .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setMinGlobalLimited(1))
-                            .or(Predicates.abilities(PartAbility.IMPORT_ITEMS).setMinGlobalLimited(1))
-                            .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS).setMinGlobalLimited(1))
-                            .or(autoAbilities(true, true, false)))
-                    .where('K', controller(blocks(definition.getBlock())))
-                    .where('O', blocks(COIL_CUPRONICKEL.getUnchecked()))
-                    .where('F', blocks(GTACBlocks.FILTERING_CAMERA.get()))
-                    .where('R', blocks(GTACBlocks.REACTIVE_CLEANER.get()))
-                    .build())
-            .shapeInfos(definition -> {
-                List<MultiblockShapeInfo> shapeInfo = new ArrayList<>();
-                var builder = MultiblockShapeInfo.builder()
-                        .aisle("EIO", "OFO", "CCC")
-                        .aisle("MCC", "FRF", "CCC")
-                        .aisle("CKC", "OFO", "CCC")
-                        .where('C', GTACBlocks.ECOFERUM_CASING.getDefaultState())
-                        .where('K', definition, Direction.SOUTH)
-                        .where('O', COIL_CUPRONICKEL)
-                        .where('F', GTACBlocks.FILTERING_CAMERA.getDefaultState())
-                        .where('R', GTACBlocks.REACTIVE_CLEANER.getDefaultState())
-                        .where('E', ENERGY_INPUT_HATCH[GTValues.LV], Direction.SOUTH)
-                        .where('I', ITEM_IMPORT_BUS[GTValues.LV], Direction.SOUTH)
-                        .where('O', ITEM_EXPORT_BUS[GTValues.LV], Direction.SOUTH)
-                        .where('M', MAINTENANCE_HATCH, Direction.SOUTH);
-                return shapeInfo;
-            })
-            .tooltips(
-                    Component.translatable("gtceu.machine.available_recipe_map_1.tooltip", "Natural Cleaner"))
-            .workableCasingRenderer(
-                    GTAC.id("block/casing/ecoferum_casing"),
-                    GTCEu.id("block/multiblock/distillation_tower"),
                     true)
             // .compassSections(GTCompassSections.TIER[MV])
             // .compassNodeSelf()
