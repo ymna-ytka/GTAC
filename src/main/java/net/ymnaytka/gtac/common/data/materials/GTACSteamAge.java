@@ -59,12 +59,5 @@ public class GTACSteamAge {
                         MaterialFlags.GENERATE_ROD,
                         MaterialFlags.GENERATE_GEAR)
                 .buildAndRegister().setFormula("Fe", true);
-
-        GTACMaterials.EnrichedHematite = new Material.Builder(GTAC.id("enriched_hematite"))
-                .dust()
-                .color(0x5f2726)
-                .secondaryColor(0x341414)
-                .iconSet(METALLIC)
-                .buildAndRegister().setFormula("Fe", true);
     }
 }
