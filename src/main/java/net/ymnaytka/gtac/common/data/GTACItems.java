@@ -27,51 +27,6 @@ public class GTACItems {
             .properties(p -> p.stacksTo(64))
             .register();
 
-    public static ItemEntry<Item> TrophyTablet = REGISTRATE
-            .item("trophy_tablet", Item::new)
-            .properties(p -> p.stacksTo(1))
-            .register();
-
-    public static ItemEntry<Item> EssenceNaga = REGISTRATE
-            .item("essence_naga", Item::new)
-            .properties(p -> p.stacksTo(16))
-            .register();
-
-    public static ItemEntry<Item> EssenceLich = REGISTRATE
-            .item("essence_lich", Item::new)
-            .properties(p -> p.stacksTo(16))
-            .register();
-
-    public static ItemEntry<Item> EssenceMinoshroom = REGISTRATE
-            .item("essence_minoshroom", Item::new)
-            .properties(p -> p.stacksTo(16))
-            .register();
-
-    public static ItemEntry<Item> EssenceHydra = REGISTRATE
-            .item("essence_hydra", Item::new)
-            .properties(p -> p.stacksTo(16))
-            .register();
-
-    public static ItemEntry<Item> EssenceUrGhast = REGISTRATE
-            .item("essence_ur_ghast", Item::new)
-            .properties(p -> p.stacksTo(16))
-            .register();
-
-    public static ItemEntry<Item> EssenceAlphaYeti = REGISTRATE
-            .item("essence_alpha_yeti", Item::new)
-            .properties(p -> p.stacksTo(16))
-            .register();
-
-    public static ItemEntry<Item> EssenceSnowQueen = REGISTRATE
-            .item("essence_snow_queen", Item::new)
-            .properties(p -> p.stacksTo(16))
-            .register();
-
-    public static ItemEntry<Item> PhantomArmorSet = REGISTRATE
-            .item("phantom_armor_set", Item::new)
-            .properties(p -> p.stacksTo(16))
-            .register();
-
     public static ItemEntry<Item> Pebbles = REGISTRATE
             .item("pebbles", Item::new)
             .properties(p -> p.stacksTo(64))
@@ -82,26 +37,6 @@ public class GTACItems {
             .properties(p -> p.stacksTo(32))
             .register();
 
-    public static ItemEntry<Item> Wood_Mold = REGISTRATE
-            .item("wood_mold", Item::new)
-            .properties(p -> p.stacksTo(1))
-            .register();
-
-    public static ItemEntry<Item> Stone_Ingot = REGISTRATE
-            .item("stone_ingot", Item::new)
-            .properties(p -> p.stacksTo(64))
-            .register();
-
-    public static ItemEntry<Item> Stone_Mold = REGISTRATE
-            .item("stone_mold", Item::new)
-            .properties(p -> p.stacksTo(1))
-            .register();
-
-    public static ItemEntry<Item> Stone_Mold_Block = REGISTRATE
-            .item("stone_mold_block", Item::new)
-            .properties(p -> p.stacksTo(1))
-            .register();
-
     public static ItemEntry<Item> Solar_Element = REGISTRATE
             .item("solar_element", Item::new)
             .properties(p -> p.stacksTo(16))
@@ -110,11 +45,6 @@ public class GTACItems {
     public static ItemEntry<Item> Copper_Voltage_Coil = REGISTRATE
             .item("copper_voltage_coil", Item::new)
             .properties(p -> p.stacksTo(64))
-            .register();
-
-    public static ItemEntry<Item> Whisk = REGISTRATE
-            .item("whisk", Item::new)
-            .properties(p -> p.stacksTo(32))
             .register();
 
     public static ItemEntry<Item> Blank_LV_Electric_Motor = REGISTRATE
@@ -247,28 +177,18 @@ public class GTACItems {
             .properties(p -> p.stacksTo(1))
             .register();
 
-    public static ItemEntry<Item> Raw_Aluminium_Ingot = REGISTRATE
-            .item("raw_aluminium_ingot", Item::new)
+    public static ItemEntry<Item> Piece_Wooden_Rubber = REGISTRATE
+            .item("piece_wooden_rubber", Item::new)
             .properties(p -> p.stacksTo(64))
             .register();
 
-    public static ItemEntry<Item> Clean_Aluminium_Ingot = REGISTRATE
-            .item("clean_aluminium_ingot", Item::new)
+    public static ItemEntry<Item> Iron_Bloom = REGISTRATE
+            .item("iron_bloom", Item::new)
             .properties(p -> p.stacksTo(64))
             .register();
 
-    public static ItemEntry<Item> High_Quality_Aluminium_Ingot = REGISTRATE
-            .item("high_quality_aluminium_ingot", Item::new)
-            .properties(p -> p.stacksTo(64))
-            .register();
-
-    public static ItemEntry<Item> Flint_Dye = REGISTRATE
-            .item("flint_dye", Item::new)
-            .properties(p -> p.stacksTo(64))
-            .register();
-
-    public static ItemEntry<Item> Cleansed_Leather = REGISTRATE
-            .item("cleansed_leather", Item::new)
+    public static ItemEntry<Item> Refined_Iron_Bloom = REGISTRATE
+            .item("refined_iron_bloom", Item::new)
             .properties(p -> p.stacksTo(64))
             .register();
 
