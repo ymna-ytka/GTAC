@@ -33,23 +33,11 @@ public class GTACBlocks {
 
     public static final BlockEntry<CoilBlock> COIL_STEEL_ECD = createCoilBlock(GTACCoilBlock.CoilType.STEEL_ECD);
 
-    public static final BlockEntry<Block> FIRE_CASING = createCasingBlock("fire_casing",
-            GTAC.id("block/casing/fire_casing"));
-
     public static final BlockEntry<Block> FERABRASS_CASING = createCasingBlock("ferabrass_casing",
             GTAC.id("block/casing/ferabrass_casing"));
 
-    public static final BlockEntry<Block> ECOFERUM_CASING = createCasingBlock("ecoferum_casing",
-            GTAC.id("block/casing/ecoferum_casing"));
-
     public static final BlockEntry<Block> INDUCTION_CASING = createCasingBlock("induction_casing",
             GTAC.id("block/casing/induction_casing"));
-
-    public static final BlockEntry<Block> FILTERING_CAMERA = createCasingBlock("filtering_camera",
-            GTAC.id("block/casing/filtering_camera"));
-
-    public static final BlockEntry<Block> REACTIVE_CLEANER = createCasingBlock("reactive_cleaner",
-            GTAC.id("block/casing/reactive_cleaner"));
 
     public static BlockEntry<Block> createGlassCasingBlock(String name, ResourceLocation texture) {
         return createCasingBlock(name, GlassBlock::new, texture, () -> Blocks.GLASS,
