@@ -34,6 +34,7 @@ public class GTMaterialAdjustments {
         Glass.addFlags(MaterialFlags.GENERATE_BOLT_SCREW);
         Clay.addFlags(MaterialFlags.GENERATE_PLATE);
         RedAlloy.addFlags(MaterialFlags.GENERATE_GEAR);
+        Iron.addFlags(MaterialFlags.GENERATE_FRAME);
     }
 
     public static void addFluid(Material material) {
