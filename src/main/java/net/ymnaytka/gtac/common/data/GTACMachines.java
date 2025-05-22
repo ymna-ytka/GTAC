@@ -98,8 +98,6 @@ public class GTACMachines {
         return definitions;
     }
 
-
-
     public static final Pair<MachineDefinition, MachineDefinition> STEAM_MIXER = registerSteamMachines(
             "steam_mixer", SimpleSteamMachine::new, (pressure, builder) -> builder
                     .rotationState(RotationState.NON_Y_AXIS)
@@ -116,7 +114,6 @@ public class GTACMachines {
                     .addOutputLimit(ItemRecipeCapability.CAP, 1)
                     .renderer(() -> new WorkableSteamMachineRenderer(pressure, GTCEu.id("block/machines/autoclave")))
                     .register());
-
 
     public static final MultiblockMachineDefinition STEAM_ALLOY_SMELTER = REGISTRATE
             .multiblock("steam_alloy_smelter", SteamParallelMultiblockMachine::new)
@@ -462,6 +459,59 @@ public class GTACMachines {
             .workableCasingRenderer(
                     GTCEu.id("block/casings/solid/machine_casing_inert_ptfe"),
                     GTCEu.id("block/multiblock/large_chemical_reactor"),
+                    true)
+            // .compassSections(GTCompassSections.TIER[MV])
+            // .compassNodeSelf()
+            .register();
+
+    public static final MultiblockMachineDefinition BRONZE_VAT = REGISTRATE
+            .multiblock("bronze_var", SteamParallelMultiblockMachine::new)
+            .langValue("Bronze Vat")
+            .rotationState(RotationState.NON_Y_AXIS)
+            .recipeType(GTACRecipeTypes.BRONZE_VAT)
+            .appearanceBlock(CASING_COKE_BRICKS)
+            .pattern(definition -> FactoryBlockPattern.start()
+                    .aisle(" AAA ", " AAA ")
+                    .aisle("ACCCA", "ACCCA")
+                    .aisle("ACCDE", "AC CA")
+                    .aisle("ACDCA", "ACCCA")
+                    .aisle(" AEA ", " AKA ")
+                    .where('A', blocks(CASING_COKE_BRICKS.get()).setMinGlobalLimited(15)
+                            .or(abilities(PartAbility.STEAM_EXPORT_ITEMS))
+                            .or(abilities(PartAbility.STEAM_IMPORT_ITEMS))
+                            .or(abilities(PartAbility.STEAM))
+                            .or(Predicates.abilities(PartAbility.EXPORT_FLUIDS).setMinGlobalLimited(1))
+                            .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS).setMinGlobalLimited(1)))
+                    .where('K', controller(blocks(definition.getBlock())))
+                    .where('E', blocks(FIREBOX_BRONZE.get()))
+                    .where('C', blocks(BRONZE_HULL.get()))
+                    .where('D', blocks(CASING_BRONZE_PIPE.get()))
+                    .where(' ', any())
+                    .build())
+            .shapeInfos(definition -> {
+                List<MultiblockShapeInfo> shapeInfo = new ArrayList<>();
+                var builder = MultiblockShapeInfo.builder()
+                        .aisle(" AAA ", " AAA ")
+                        .aisle("ACCCA", "ACCCF")
+                        .aisle("ACCDE", "AC CY")
+                        .aisle("ACDCA", "ACCCS")
+                        .aisle(" AEA ", " AKA ")
+                        .where('A', CASING_COKE_BRICKS.getDefaultState())
+                        .where('F', STEAM_IMPORT_BUS, Direction.EAST)
+                        .where('K', definition, Direction.SOUTH)
+                        .where('Y', STEAM_HATCH, Direction.EAST)
+                        .where('E', FIREBOX_BRONZE)
+                        .where('D', CASING_BRONZE_PIPE)
+                        .where('C', BRONZE_HULL)
+                        .where('S', STEAM_EXPORT_BUS, Direction.EAST);
+
+                return shapeInfo;
+            })
+            .tooltips(
+                    Component.translatable("gtceu.machine.available_recipe_map_1.tooltip", "Bronze Vat"))
+            .workableCasingRenderer(
+                    GTCEu.id("block/casings/solid/machine_coke_bricks"),
+                    GTAC.id("block/multiblock/smoking"),
                     true)
             // .compassSections(GTCompassSections.TIER[MV])
             // .compassNodeSelf()

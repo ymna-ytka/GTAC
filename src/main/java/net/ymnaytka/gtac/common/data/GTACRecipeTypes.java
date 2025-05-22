@@ -130,4 +130,10 @@ public class GTACRecipeTypes {
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, LEFT_TO_RIGHT)
             .setSound(GTValues.FOOLS.get() ? GTSoundEntries.SCIENCE : GTSoundEntries.CHEMICAL)
             .setEUIO(IO.IN);
+
+    public static final GTRecipeType BRONZE_VAT = register("bronze_vat", MULTIBLOCK)
+            .setMaxIOSize(1, 1, 1, 1)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT)
+            .setSound(GTSoundEntries.FIRE)
+            .setEUIO(IO.IN);
 }
