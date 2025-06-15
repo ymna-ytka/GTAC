@@ -19,6 +19,8 @@ public class GTACMaterials {
     public static Material CastIron;
     public static Material Tannin;
     public static Material LimestoneWater;
+    public static Material ImpregnatingOil;
+    public static Material Latex;
 
     public static Material CarbideSilicon;
     public static Material ColdQuartz;
@@ -34,8 +36,6 @@ public class GTACMaterials {
     public static Material BlackEssence;
     public static Material LightEssence;
     public static Material NIALSteel;
-    public static Material SalterWater;
-    public static Material ImpregnatingOil;
     public static Material SodiumCarbonate;
 
     public static Material BasicLiquidFertilizer;
