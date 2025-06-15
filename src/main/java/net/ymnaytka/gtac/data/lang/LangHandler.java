@@ -9,6 +9,8 @@ public class LangHandler extends com.gregtechceu.gtceu.data.lang.LangHandler {
                 "This hatch is for Fluid ingredients! Not to power with steam!");
         replace(provider, "block.gtceu.steam_fluid_output_hatch", "Bronze Output Hatch");
         replace(provider, "block.gtceu.steam_fluid_input_hatch", "Bronze Input Hatch");
+        replace(provider, "block.gtceu.masonry_item_export_bus", "Masonry Export Bus");
+        replace(provider, "block.gtceu.masonry_item_import_bus", "Masonry Import Bus");
         replace(provider, "block.gtceu.lv_air_cooler", "Basic Air Cooler §r");
         replace(provider, "block.gtceu.mv_air_cooler", "§bAdvanced Air Cooler §r");
         replace(provider, "block.gtceu.hv_air_cooler", "§6Advanced Air Cooler II§r");
@@ -37,10 +39,11 @@ public class LangHandler extends com.gregtechceu.gtceu.data.lang.LangHandler {
         replace(provider, "block.gtceu.iv_twilight_farmer", "§cElite Twilight Farmer §r");
         replace(provider, "block.gtceu.luv_twilight_farmer", "§cElite Twilight Farmer II§r");
         replace(provider, "block.gtceu.zpm_twilight_farmer", "§cElite Twilight Farmer III§r");
-        replace(provider, "block.gtceu.lp_steam_autoclave", "Low Pressure Steam Autoclave");
         replace(provider, "block.gtceu.lp_steam_mixer", "Low Pressure Steam Mixer");
-        replace(provider, "block.gtceu.hp_steam_autoclave", "High Pressure Steam Autoclave");
+        replace(provider, "block.gtceu.lp_steam_vulcanizer", "Low Pressure Steam Vulcanizer");
         replace(provider, "block.gtceu.hp_steam_mixer", "High Pressure Steam Mixer");
+        replace(provider, "block.gtceu.hp_steam_vulcanizer", "High Pressure Steam Vulcanizer");
+        replace(provider, "block.gtceu.tar_smokehouse", "Tar Smokehouse");
 
         provider.add("gtceu.air_cooler", "Air Cooler");
         provider.add("gtceu.cooler", "Cooling");
@@ -54,5 +57,7 @@ public class LangHandler extends com.gregtechceu.gtceu.data.lang.LangHandler {
         provider.add("gtceu.induction_furnace", "Induction Furnace");
         provider.add("gtceu.natural_cleaner", "Natural Cleaner");
         provider.add("gtceu.fertilizer_buck", "Fertilizer Buck");
+        provider.add("gtceu.vulcanizer", "Vulcanization");
+        provider.add("gtceu.coagulation", "Coagulation");
     }
 }
