@@ -25,7 +25,13 @@ public class GTACRecipeTypes {
 
     public static void init() {}
 
-    public static final GTRecipeType BRONZE_MIXER = register("bronze_mixer", MULTIBLOCK)
+    public static final GTRecipeType STONE_BLAST_FURNACE = register("stone_blast_furnace", MULTIBLOCK)
+            .setMaxIOSize(2, 3, 0, 0)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT)
+            .setSound(GTSoundEntries.FIRE)
+            .setEUIO(IO.IN);
+
+    public static final GTRecipeType BRONZE_MIXER = register("bronze_mixer", ELECTRIC)
             .setMaxIOSize(6, 2, 3, 3)
             .setSlotOverlay(false, false, GuiTextures.DUST_OVERLAY)
             .setSlotOverlay(true, false, GuiTextures.DUST_OVERLAY)
@@ -87,16 +93,6 @@ public class GTACRecipeTypes {
             .setSound(GTSoundEntries.FURNACE)
             .setEUIO(IO.IN);
 
-    public static final GTRecipeType NATURAL_CLEANER = register("natural_cleaner", MULTIBLOCK)
-            .setMaxIOSize(3, 2, 1, 0)
-            .setSlotOverlay(false, false, false, GuiTextures.MOLECULAR_OVERLAY_1)
-            .setSlotOverlay(false, false, true, GuiTextures.MOLECULAR_OVERLAY_2)
-            .setSlotOverlay(false, true, false, GuiTextures.MOLECULAR_OVERLAY_3)
-            .setSlotOverlay(true, false, GuiTextures.VIAL_OVERLAY_1)
-            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, LEFT_TO_RIGHT)
-            .setSound(GTValues.FOOLS.get() ? GTSoundEntries.SCIENCE : GTSoundEntries.CHEMICAL)
-            .setEUIO(IO.IN);
-
     public static final GTRecipeType AIR_COOLER = register("air_cooler", ELECTRIC)
             .setMaxIOSize(0, 0, 1, 1)
             .setSound(GTSoundEntries.COOLING)
@@ -133,6 +129,20 @@ public class GTACRecipeTypes {
 
     public static final GTRecipeType BRONZE_VAT = register("bronze_vat", MULTIBLOCK)
             .setMaxIOSize(1, 1, 1, 1)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT)
+            .setSound(GTSoundEntries.FIRE)
+            .setEUIO(IO.IN);
+
+    public static final GTRecipeType VULCANIZER = register("vulcanizer", ELECTRIC)
+            .setMaxIOSize(2, 2, 0, 0)
+            .setSlotOverlay(false, false, GuiTextures.DUST_OVERLAY)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT)
+            .setSound(GTSoundEntries.FIRE)
+            .setEUIO(IO.IN);
+
+    public static final GTRecipeType COAGULATION = register("coagulation", ELECTRIC)
+            .setMaxIOSize(2, 2, 0, 0)
+            .setSlotOverlay(false, false, GuiTextures.DUST_OVERLAY)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT)
             .setSound(GTSoundEntries.FIRE)
             .setEUIO(IO.IN);
