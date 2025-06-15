@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "gtac:block/casing/cast_iron_casing"
+  }
+}

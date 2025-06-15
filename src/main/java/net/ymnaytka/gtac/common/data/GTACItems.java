@@ -17,8 +17,18 @@ public class GTACItems {
         GTACRegistration.REGISTRATE.creativeModeTab(() -> GTACreativeModTab.CORE);
     }
 
-    public static ItemEntry<Item> RawCleansedLeather = REGISTRATE
-            .item("raw_cleansed_leather", Item::new)
+    public static ItemEntry<Item> SoakedLeather = REGISTRATE
+            .item("soaked_leather", Item::new)
+            .properties(p -> p.stacksTo(64))
+            .register();
+
+    public static ItemEntry<Item> ScrapedLeather = REGISTRATE
+            .item("scraped_leather", Item::new)
+            .properties(p -> p.stacksTo(64))
+            .register();
+
+    public static ItemEntry<Item> PreparedLeather = REGISTRATE
+            .item("prepared_leather", Item::new)
             .properties(p -> p.stacksTo(64))
             .register();
 
@@ -35,6 +45,41 @@ public class GTACItems {
     public static ItemEntry<Item> Mini_Cobblestone = REGISTRATE
             .item("mini_cobblestone", Item::new)
             .properties(p -> p.stacksTo(32))
+            .register();
+
+    public static ItemEntry<Item> Masonry_Brick = REGISTRATE
+            .item("masonry_brick", Item::new)
+            .properties(p -> p.stacksTo(64))
+            .register();
+
+    public static ItemEntry<Item> Iron_Slag = REGISTRATE
+            .item("iron_slag", Item::new)
+            .properties(p -> p.stacksTo(64))
+            .register();
+
+    public static ItemEntry<Item> Copper_Slag = REGISTRATE
+            .item("copper_slag", Item::new)
+            .properties(p -> p.stacksTo(64))
+            .register();
+
+    public static ItemEntry<Item> Tin_Slag = REGISTRATE
+            .item("tin_slag", Item::new)
+            .properties(p -> p.stacksTo(64))
+            .register();
+
+    public static ItemEntry<Item> Lead_Slag = REGISTRATE
+            .item("lead_slag", Item::new)
+            .properties(p -> p.stacksTo(64))
+            .register();
+
+    public static ItemEntry<Item> Coke_Paste = REGISTRATE
+            .item("coke_paste", Item::new)
+            .properties(p -> p.stacksTo(64))
+            .register();
+
+    public static ItemEntry<Item> Refractory_Paste = REGISTRATE
+            .item("refractory_paste", Item::new)
+            .properties(p -> p.stacksTo(64))
             .register();
 
     public static ItemEntry<Item> Solar_Element = REGISTRATE
@@ -90,11 +135,6 @@ public class GTACItems {
     public static ItemEntry<Item> Twilight_Gem = REGISTRATE
             .item("twilight_gem", Item::new)
             .properties(p -> p.stacksTo(1))
-            .register();
-
-    public static ItemEntry<Item> Tanning_Mixture = REGISTRATE
-            .item("tanning_mixture", Item::new)
-            .properties(p -> p.stacksTo(64))
             .register();
 
     public static ItemEntry<Item> Steam_Piston = REGISTRATE
@@ -182,13 +222,13 @@ public class GTACItems {
             .properties(p -> p.stacksTo(64))
             .register();
 
-    public static ItemEntry<Item> Iron_Bloom = REGISTRATE
-            .item("iron_bloom", Item::new)
+    public static ItemEntry<Item> GrayCastIron = REGISTRATE
+            .item("gray_cast_iron", Item::new)
             .properties(p -> p.stacksTo(64))
             .register();
 
-    public static ItemEntry<Item> Refined_Iron_Bloom = REGISTRATE
-            .item("refined_iron_bloom", Item::new)
+    public static ItemEntry<Item> CoagulatedRubber = REGISTRATE
+            .item("coagulated_rubber", Item::new)
             .properties(p -> p.stacksTo(64))
             .register();
 
