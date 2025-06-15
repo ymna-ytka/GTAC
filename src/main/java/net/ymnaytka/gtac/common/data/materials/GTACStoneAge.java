@@ -8,11 +8,6 @@ import net.ymnaytka.gtac.common.data.GTACMaterials;
 public class GTACStoneAge {
 
     public static void init() {
-        GTACMaterials.SalterWater = new Material.Builder(GTAC.id("salter_water"))
-                .liquid()
-                .color(0x9de0e9)
-                .buildAndRegister().setFormula("H₂O", true);
-
         GTACMaterials.ImpregnatingOil = new Material.Builder(GTAC.id("impregnating_oil"))
                 .liquid()
                 .color(0x23120D)
