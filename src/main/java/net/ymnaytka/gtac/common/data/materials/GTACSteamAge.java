@@ -32,9 +32,7 @@ public class GTACSteamAge {
                 .iconSet(METALLIC)
                 .flags(
                         MaterialFlags.GENERATE_PLATE,
-                        MaterialFlags.GENERATE_FRAME
-
-                )
+                        MaterialFlags.GENERATE_FRAME)
                 .buildAndRegister();
 
         GTACMaterials.Constantan = new Material.Builder(GTAC.id("constantan"))
@@ -57,7 +55,13 @@ public class GTACSteamAge {
                 .flags(
                         MaterialFlags.GENERATE_PLATE,
                         MaterialFlags.GENERATE_ROD,
-                        MaterialFlags.GENERATE_GEAR)
+                        MaterialFlags.GENERATE_GEAR,
+                        MaterialFlags.GENERATE_FRAME)
                 .buildAndRegister().setFormula("Fe", true);
+
+        GTACMaterials.Latex = new Material.Builder(GTAC.id("latex"))
+                .liquid()
+                .color(0xebe7e7)
+                .buildAndRegister();
     }
 }
