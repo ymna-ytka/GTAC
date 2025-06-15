@@ -9,15 +9,12 @@ import com.gregtechceu.gtceu.common.data.machines.GTMachineUtils;
 import com.gregtechceu.gtceu.common.registry.GTRegistration;
 
 import net.minecraft.network.chat.Component;
+import net.ymnaytka.gtac.api.machine.part.MasonryItemBusPartMachine;
 import net.ymnaytka.gtac.api.machine.part.SteamFluidHatchPartMachine;
 import net.ymnaytka.gtac.common.data.*;
 import net.ymnaytka.gtac.common.registry.GTACRegistration;
 
 import static com.gregtechceu.gtceu.api.GTValues.*;
-import static com.gregtechceu.gtceu.api.pattern.Predicates.*;
-import static com.gregtechceu.gtceu.common.data.GTBlocks.*;
-import static com.gregtechceu.gtceu.common.data.GTMachines.*;
-import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
 import static com.gregtechceu.gtceu.common.data.machines.GTMachineUtils.registerSimpleMachines;
 
 public class GTACSMachines {
@@ -41,6 +38,22 @@ public class GTACSMachines {
             .abilities(PartAbility.EXPORT_FLUIDS)
             .tooltips(Component.translatable("gtceu.machine.steam_fluid_hatch_notice"))
             .overlaySteamHullRenderer("fluid_hatch.export")
+            .register();
+
+    public static final MachineDefinition MASONRY_IMPORT_BUS = GTRegistration.REGISTRATE
+            .machine("masonry_item_import_bus", holder -> new MasonryItemBusPartMachine(holder, IO.IN, 1))
+            .rotationState(RotationState.ALL)
+            .abilities(PartAbility.EXPORT_ITEMS)
+            .overlaySteamHullRenderer("item_bus.import")
+            .tooltips(Component.translatable("gtceu.machine.item_bus.import.tooltip"))
+            .register();
+
+    public static final MachineDefinition MASONRY_EXPORT_BUS = GTRegistration.REGISTRATE
+            .machine("masonry_item_export_bus", holder -> new MasonryItemBusPartMachine(holder, IO.OUT, 1))
+            .rotationState(RotationState.ALL)
+            .abilities(PartAbility.IMPORT_ITEMS)
+            .tooltips(Component.translatable("gtceu.machine.item_bus.export.tooltip"))
+            .overlaySteamHullRenderer("item_bus.export")
             .register();
 
     public static final MachineDefinition[] AIR_COOLER = registerSimpleMachines(
