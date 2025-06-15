@@ -39,6 +39,12 @@ public class GTACBlocks {
     public static final BlockEntry<Block> INDUCTION_CASING = createCasingBlock("induction_casing",
             GTAC.id("block/casing/induction_casing"));
 
+    public static final BlockEntry<Block> MASONRY_BRICKS = createCasingBlock("masonry_bricks",
+            GTAC.id("block/casing/masonry_bricks"));
+
+    public static final BlockEntry<Block> CAST_IRON_CASING = createCasingBlock("cast_iron_casing",
+            GTAC.id("block/casing/cast_iron_casing"));
+
     public static BlockEntry<Block> createGlassCasingBlock(String name, ResourceLocation texture) {
         return createCasingBlock(name, GlassBlock::new, texture, () -> Blocks.GLASS,
                 () -> RenderType::translucent);
