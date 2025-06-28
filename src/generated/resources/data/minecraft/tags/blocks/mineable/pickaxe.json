@@ -1,9 +1,10 @@
 {
   "values": [
-    "gtac:steel_ecd_coil_block",
+    "gtac:masonry_bricks",
+    "gtac:wood-lead_casing",
     "gtac:ferabrass_casing",
     "gtac:induction_casing",
-    "gtac:masonry_bricks",
-    "gtac:cast_iron_casing"
+    "gtac:cast_iron_casing",
+    "gtac:steel_ecd_coil_block"
   ]
 }

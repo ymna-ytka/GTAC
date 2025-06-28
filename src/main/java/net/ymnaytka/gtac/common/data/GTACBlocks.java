@@ -15,7 +15,6 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.GlassBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.ymnaytka.gtac.GTAC;
-import net.ymnaytka.gtac.common.registry.GTACRegistration;
 
 import com.tterrag.registrate.util.entry.BlockEntry;
 import com.tterrag.registrate.util.nullness.NonNullFunction;
@@ -28,10 +27,15 @@ import static net.ymnaytka.gtac.common.registry.GTACRegistration.REGISTRATE;
 public class GTACBlocks {
 
     static {
-        GTACRegistration.REGISTRATE.creativeModeTab(() -> GTACreativeModTab.CORE);
+        REGISTRATE.creativeModeTab(() -> GTACreativeModTab.GTACBlock);
     }
 
-    public static final BlockEntry<CoilBlock> COIL_STEEL_ECD = createCoilBlock(GTACCoilBlock.CoilType.STEEL_ECD);
+    public static void init() {}
+
+
+
+    public static final BlockEntry<Block> MASONRY_BRICKS = createCasingBlock("masonry_bricks",
+            GTAC.id("block/casing/masonry_bricks"));
 
     public static final BlockEntry<Block> FERABRASS_CASING = createCasingBlock("ferabrass_casing",
             GTAC.id("block/casing/ferabrass_casing"));
@@ -39,11 +43,17 @@ public class GTACBlocks {
     public static final BlockEntry<Block> INDUCTION_CASING = createCasingBlock("induction_casing",
             GTAC.id("block/casing/induction_casing"));
 
-    public static final BlockEntry<Block> MASONRY_BRICKS = createCasingBlock("masonry_bricks",
-            GTAC.id("block/casing/masonry_bricks"));
-
     public static final BlockEntry<Block> CAST_IRON_CASING = createCasingBlock("cast_iron_casing",
             GTAC.id("block/casing/cast_iron_casing"));
+
+
+    public static final BlockEntry<Block> WOOD_LEAD_CASING = createSidedCasingBlock("wood_lead_casing",
+            GTAC.id("block/casing/wl_casing"));
+
+
+    public static final BlockEntry<CoilBlock> COIL_STEEL_ECD = createCoilBlock(GTACCoilBlock.CoilType.STEEL_ECD);
+
+
 
     public static BlockEntry<Block> createGlassCasingBlock(String name, ResourceLocation texture) {
         return createCasingBlock(name, GlassBlock::new, texture, () -> Blocks.GLASS,
@@ -72,26 +82,13 @@ public class GTACBlocks {
                 .register();
     }
 
-    public static BlockEntry<Block> createSidedCasingBlock(String name, ResourceLocation sideTexture,
-                                                           ResourceLocation topTexture) {
-        return createSidedCasingBlock(name, Block::new, sideTexture, topTexture,
-                () -> Blocks.IRON_BLOCK,
-                () -> RenderType::cutoutMipped);
-    }
-
     @SuppressWarnings("removal")
-    public static BlockEntry<Block> createSidedCasingBlock(String name,
-                                                           NonNullFunction<BlockBehaviour.Properties, Block> blockSupplier,
-                                                           ResourceLocation sideTexture,
-                                                           ResourceLocation topTexture,
-                                                           NonNullSupplier<? extends Block> properties,
-                                                           Supplier<Supplier<RenderType>> type) {
-        return REGISTRATE.block(name, blockSupplier)
-                .initialProperties(properties)
+    private static BlockEntry<Block> createSidedCasingBlock(String name, ResourceLocation texture) {
+        return REGISTRATE.block(name, Block::new)
+                .initialProperties(() -> Blocks.IRON_BLOCK)
                 .properties(p -> p.isValidSpawn((state, level, pos, ent) -> false))
-                .addLayer(type)
-                .blockstate((ctx, prov) -> prov.simpleBlock(ctx.get(), prov.models()
-                        .cubeBottomTop(name, sideTexture, topTexture, topTexture)))
+                .addLayer(() -> RenderType::cutoutMipped)
+                .blockstate(GTModels.createSidedCasingModel(name, texture))
                 .tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .item(BlockItem::new)
                 .build()
@@ -126,6 +123,4 @@ public class GTACBlocks {
         GTCEuAPI.HEATING_COILS.put(coilType, coilBlock);
         return coilBlock;
     }
-
-    public static void init() {}
 }
